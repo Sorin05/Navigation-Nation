@@ -6,18 +6,23 @@ const nav3 = document.getElementById('nav-3');
 const nav4 = document.getElementById('nav-4');
 const nav5 = document.getElementById('nav-5');
 
-function toggleNav(){
+function toggleNav() {
     // Toggle: Menu Bars Open/Closed
     menuBars.classList.toggle('change');
-    // Toggle Menu active 
+    // Toggle: Menu Active
     overlay.classList.toggle('overlay-active');
-    if (overlay.classList.contains('overlay-active')){
-        // Animate In - Overlay
-        overlay.classList.add('overlay-slide-right');
+    if (overlay.classList.contains('overlay-active')) {
+      // Animate In - Overlay
+      overlay.classList.replace('overlay-slide-left', 'overlay-slide-right');
+      // Animate In - Nav Items
+      navAnimation('out', 'in');
     } else {
-        overlay.classList.add(overlay-slide-left);
+      // Animate Out - Overlay
+      overlay.classList.replace('overlay-slide-right', 'overlay-slide-left');
+      // Animate Out - Nav Items
+      navAnimation('in', 'out');
     }
-}
+  }
 
 // Event Listeners
 menuBars.addEventListener('click', toggleNav);
